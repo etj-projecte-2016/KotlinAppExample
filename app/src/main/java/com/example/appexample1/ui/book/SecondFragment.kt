@@ -1,15 +1,16 @@
-package com.example.appexample1
+package com.example.appexample1.ui.book
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import androidx.navigation.fragment.findNavController
+import com.example.appexample1.R
 import com.example.appexample1.databinding.FragmentSecondBinding
 
 /**
- * A simple [Fragment] subclass as the second destination in the navigation.
+ * A simple [androidx.fragment.app.Fragment] subclass as the second destination in the navigation.
  */
 class SecondFragment : Fragment() {
 

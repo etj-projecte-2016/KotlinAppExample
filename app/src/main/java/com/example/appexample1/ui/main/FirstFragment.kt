@@ -1,19 +1,26 @@
-package com.example.appexample1
+
+package com.example.appexample1.ui.main
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.ViewModelProvider
 import androidx.navigation.fragment.findNavController
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import com.example.appexample1.R
 import com.example.appexample1.databinding.FragmentFirstBinding
 
 /**
- * A simple [Fragment] subclass as the default destination in the navigation.
+ * A simple [androidx.fragment.app.Fragment] subclass as the default destination in the navigation.
  */
 class FirstFragment : Fragment() {
 
     private var _binding: FragmentFirstBinding? = null
+    private lateinit var viewModel: BookViewModel
+    private lateinit var adapter: BookAdapter
 
     // This property is only valid between onCreateView and
     // onDestroyView.
@@ -32,8 +39,18 @@ class FirstFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.buttonFirst.setOnClickListener {
-            findNavController().navigate(R.id.action_FirstFragment_to_SecondFragment)
+        viewModel = ViewModelProvider(this).get(BookViewModel::class.java)
+
+        val recyclerView = view.findViewById<RecyclerView>(R.id.BookRecyclerView)
+        adapter = BookAdapter(emptyList()) { bookId ->
+            viewModel.onBookmarkClicked(bookId)
+        }
+
+        recyclerView.layoutManager = LinearLayoutManager(requireContext())
+        recyclerView.adapter = adapter
+
+        viewModel.books.observe(viewLifecycleOwner) { books ->
+            adapter.updateData(books)
         }
     }
 
