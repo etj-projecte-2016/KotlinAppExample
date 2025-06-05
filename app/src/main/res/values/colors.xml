@@ -2,4 +2,11 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="add_book">#8D6E63</color>
+    <!--Cards -->
+    <color name="text_primary">#2D2D2D</color>     <!-- gris casi negro -->
+    <color name="text_secondary">#555555</color>   <!-- gris medio -->
+    <color name="card_background">#FDFCF9</color>   <!-- blanco roto suave -->
+    <color name="background_light">#FBFAF7</color> <!-- fondo general más pálido -->
+    <color name="bookmark_button">#E3E1DC</color>  <!-- gris muy claro cálido -->
 </resources>

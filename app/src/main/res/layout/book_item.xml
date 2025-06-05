@@ -1,90 +1,77 @@
-<com.google.android.material.card.MaterialCardView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.google.android.material.card.MaterialCardView
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/cardLibro"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:foreground="?android:attr/selectableItemBackground"
-    android:clickable="true"
-    android:focusable="true">
+    app:cardCornerRadius="24dp"
+    app:cardElevation="6dp"
+    android:layout_margin="16dp"
+    app:cardBackgroundColor="@color/card_background"
+    app:strokeWidth="0dp">
 
-    <androidx.constraintlayout.widget.ConstraintLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:padding="16dp">
+        android:orientation="vertical">
 
-        <!-- Imagen circular -->
-        <ImageView
-            android:id="@+id/ivPortada"
-            android:layout_width="72dp"
-            android:layout_height="72dp"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_book_placeholder"
-            android:layout_marginEnd="16dp"
-            android:background="@drawable/circle_mask"
-            android:clipToOutline="true"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintStart_toStartOf="parent"/>
+        <!-- Imagen -->
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="200dp">
 
-        <ImageButton
-            android:id="@+id/bookmark_button"
-            android:layout_width="48dp"
-            android:layout_height="48dp"
-            android:layout_alignParentEnd="true"
-            android:background="@drawable/bg_round_button"
-            android:contentDescription="Bookmark"
-            android:padding="10dp"
-            android:scaleType="centerInside"
-            android:src="@drawable/ic_bookmark_border"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            <ImageView
+                android:id="@+id/imageCardView"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:scaleType="centerCrop"
+                android:src="@drawable/ejemplo1"
+                android:background="@drawable/rounded_bottom_corners"
+                android:clipToOutline="true" />
+
+            <!-- Botón Bookmark en la esquina superior izquierda -->
+            <ImageButton
+                android:id="@+id/bookmark_button"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:layout_gravity="top|start"
+                android:layout_margin="12dp"
+                android:background="@drawable/bg_round_button"
+                android:scaleType="centerInside"
+                android:src="@drawable/ic_bookmark_border"
+                app:tint="@android:color/white" />
+        </FrameLayout>
+
+        <!-- Información del libro -->
+        <TextView
+            android:id="@+id/tituloLibro"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="12dp"
+            android:paddingHorizontal="16dp"
+            android:text="Título del libro"
+            android:textColor="@color/text_primary"
+            android:textAppearance="?attr/textAppearanceTitleMedium" />
 
         <TextView
-            android:id="@+id/bookAuthor"
-            android:layout_width="wrap_content"
+            android:id="@+id/autorLibro"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="1"
+            android:paddingTop="4dp"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/text_secondary"
             android:text="Autor del libro"
-            android:textColor="?android:textColorPrimary"
-            app:layout_constraintBottom_toBottomOf="@+id/synopsis"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.086"
-            app:layout_constraintStart_toEndOf="@+id/ivPortada"
-            app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.208" />
+            android:textAppearance="?attr/textAppearanceBodyMedium" />
 
         <TextView
-            android:id="@+id/year"
-            android:layout_width="0dp"
+            android:id="@+id/anioLibro"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:ellipsize="end"
-            android:maxLines="1"
-            android:text="2023"
-            app:layout_constraintStart_toStartOf="@id/bookAuthor"
-            app:layout_constraintTop_toBottomOf="@id/bookAuthor" />
+            android:paddingTop="4dp"
+            android:paddingBottom="12dp"
+            android:paddingHorizontal="16dp"
+            android:textColor="@color/text_secondary"
+            android:text="2025"
+            android:textAppearance="?attr/textAppearanceBodySmall" />
 
-        <TextView
-            android:id="@+id/tiitleBook"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="16dp"
-            android:text="Titulo del libro"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/ivPortada" />
-
-        <TextView
-            android:id="@+id/synopsis"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="8dp"
-            android:text="Aqui ira una pequeña synopsis del libro en cuestion"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tiitleBook" />
-
-        <!-- Título -->
-
-        <!-- Sinopsis -->
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
+    </LinearLayout>
 </com.google.android.material.card.MaterialCardView>

@@ -1,8 +1,4 @@
-<ripple xmlns:android="http://schemas.android.com/apk/res/android"
-    android:color="?attr/colorControlHighlight">
-    <item>
-        <shape android:shape="oval">
-            <solid android:color="?attr/colorSurfaceVariant"/>
-        </shape>
-    </item>
-</ripple>
+<shape xmlns:android="http://schemas.android.com/apk/res/android"
+    android:shape="oval">
+    <solid android:color="#66000000" /> <!-- Negro 40% opaco -->
+</shape>

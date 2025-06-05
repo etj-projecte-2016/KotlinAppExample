@@ -15,10 +15,9 @@ class BookAdapter(
 ) : RecyclerView.Adapter<BookAdapter.BookViewHolder>() {
 
     inner class BookViewHolder(val view: View) : RecyclerView.ViewHolder(view) {
-        val title = view.findViewById<TextView>(R.id.tiitleBook)
-        val author = view.findViewById<TextView>(R.id.bookAuthor)
-        val year = view.findViewById<TextView>(R.id.year)
-        val synopsis = view.findViewById<TextView>(R.id.synopsis)
+        val title = view.findViewById<TextView>(R.id.tituloLibro)
+        val author = view.findViewById<TextView>(R.id.autorLibro)
+        val year = view.findViewById<TextView>(R.id.anioLibro)
         val bookmark = view.findViewById<ImageButton>(R.id.bookmark_button)
     }
 
@@ -34,7 +33,6 @@ class BookAdapter(
         holder.title.text = book.bookTittle
         holder.author.text = book.author
         holder.year.text = book.year.toString()
-        holder.synopsis.text = book.synopsis
         holder.bookmark.setImageResource(
             if (book.isBookMarked) R.drawable.ic_bookmark_filled else R.drawable.ic_bookmark_border
         )

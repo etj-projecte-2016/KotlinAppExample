@@ -1,0 +1,23 @@
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="24dp"
+    android:height="24dp"
+    android:viewportWidth="24"
+    android:viewportHeight="24">
+
+    <!-- Cubierta del libro -->
+    <path
+        android:fillColor="#FF6F00"
+        android:pathData="M3,19h14a1,1 0 0 0 1,-1v-12a2,2 0 0 0 -2,-2H4a1,1 0 0 0 -1,1v13a1,1 0 0 0 1,1z" />
+
+    <!-- Página interior -->
+    <path
+        android:fillColor="#FFCC80"
+        android:pathData="M5,5h10v12H5z" />
+
+    <!-- Línea central del libro -->
+    <path
+        android:strokeColor="#BF360C"
+        android:strokeWidth="1"
+        android:pathData="M12,5v12" />
+
+</vector>
